@@ -43,6 +43,11 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 0/z_index = 0
 
+[sub_resource type="NavigationPolygon" id=11]
+vertices = PoolVector2Array( 2739, 435, 2741, 501, 2679, 500, 1359, -633, 3021, 496, 2958, 494, 2962, 435, 3706, -207, 2679, 560, 1998, 563, 2000, 493, 2945, 435, 2896, 435, 2898, 368, 1064, 570, 67, 572, 72, 389, 325, 384, 1093, 481, 1845, 563, 1497, 556, 1499, 509, 1853, 488, 3699, 568, 3021, 566, 2581, -641, 3706, -632, 2876, 369, 2803, 367, 74, -137, 80, -633, 1351, 377, 1201, 364, 325, 321, 64, 316, 61, -59, 2800, 435, 1416, 494, 1420, 445, 1202, 433, 1967, 492, 1356, 435 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 8, 9, 10, 2 ), PoolIntArray( 11, 12, 13 ), PoolIntArray( 14, 15, 16, 17, 18 ), PoolIntArray( 19, 20, 21, 22 ), PoolIntArray( 23, 24, 4, 7 ), PoolIntArray( 25, 26, 7, 6, 11, 13 ), PoolIntArray( 25, 13, 27, 28, 3 ), PoolIntArray( 29, 30, 3, 31, 32 ), PoolIntArray( 33, 34, 35 ), PoolIntArray( 28, 36, 0, 3 ), PoolIntArray( 21, 37, 38 ), PoolIntArray( 18, 17, 33, 32, 39 ), PoolIntArray( 3, 2, 10, 40, 22 ), PoolIntArray( 3, 22, 21, 38 ), PoolIntArray( 3, 38, 41, 31 ), PoolIntArray( 35, 29, 32, 33 ) ]
+outlines = [ PoolVector2Array( 61, -59, 64, 316, 325, 321, 325, 384, 72, 389, 67, 572, 1064, 570, 1093, 481, 1202, 433, 1201, 364, 1351, 377, 1356, 435, 1420, 445, 1416, 494, 1499, 509, 1497, 556, 1845, 563, 1853, 488, 1967, 492, 2000, 493, 1998, 563, 2679, 560, 2679, 500, 2741, 501, 2739, 435, 2800, 435, 2803, 367, 2876, 369, 2898, 368, 2896, 435, 2945, 435, 2962, 435, 2958, 494, 3021, 496, 3021, 566, 3699, 568, 3706, -207, 3706, -632, 2581, -641, 1359, -633, 80, -633, 74, -137 ) ]
+
 [node name="Game" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -62,3 +67,9 @@ limit_bottom = 600
 
 [node name="Enemy_Container" type="Node2D" parent="."]
 script = ExtResource( 4 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+position = Vector2( -6, 0 )
+navpoly = SubResource( 11 )
